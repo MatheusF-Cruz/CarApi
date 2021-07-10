@@ -1,0 +1,23 @@
+type Marca{
+    _id: ID!
+    name: String!
+}
+
+
+input MarcaInput{
+    name: String!
+}
+
+type Query {
+    marcas: [Marca!]!
+    marca(id: ID!): Marca!
+
+}
+
+
+
+type Mutation {
+    createMarca(data: MarcaInput!): Marca!
+    updateMarca(id: ID, data: MarcaInput!): Marca!
+    deleteMarca(id: ID!): Boolean
+}
